@@ -1,0 +1,12 @@
+// HomeController.java
+@Controller
+@RequestMapping("/home")
+public class HomeController {
+    
+    @GetMapping
+    @Secured("ROLE_ADMIN")
+    public String home(Model model) {
+        // Only accessible by users with ROLE_ADMIN
+        return "home";
+    }
+}
